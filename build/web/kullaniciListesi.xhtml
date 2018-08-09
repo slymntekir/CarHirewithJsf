@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./newTemplate.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            Kullanıcı Bilgileri
+                        </div>
+                        <div class="panel-body panel-red">
+                            <h:dataTable class="table table-bordered table-striped" value="#{kullanicilarManagedBean1.kullanici}" var="kullanici">
+                                <h:column>#{kullanici.kullaniciAdi}<f:facet name="header"><h:outputLabel value="kullaniciAdi"></h:outputLabel></f:facet> </h:column>
+                                <h:column>#{kullanici.adi}<f:facet name="header"><h:outputLabel value="adi"></h:outputLabel></f:facet></h:column>
+                                <h:column>#{kullanici.soyadi}<f:facet name="header"><h:outputLabel value="soyadi"></h:outputLabel></f:facet></h:column>
+                                <h:column>#{kullanici.email}<f:facet name="header"><h:outputLabel value="email"></h:outputLabel></f:facet></h:column>
+                                <h:column>#{kullanici.tel}<f:facet name="header"><h:outputLabel value="tel"></h:outputLabel></f:facet></h:column>
+                                <h:column>#{kullanici.cinsiyet}<f:facet name="header"><h:outputLabel value="cinsiyet"></h:outputLabel></f:facet></h:column>
+                            </h:dataTable>
+                        </div>
+                    </div>
+                </h:form>
+            </ui:define>
+
+            <ui:define name="bottom">
+                Isparta 2016
+            </ui:define>
+        </ui:composition>
+
+    </body>
+</html>

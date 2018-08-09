@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./newTemplate.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Kayıt Bilgilerini Giriniz
+                        </div>
+                        <div class="panel-body">
+                            <h:panelGrid class="table table-bordered table-striped" columns="3">
+                                <h:outputText value="Kullanici Adi Giriniz :"/>
+                                <h:inputText id="k_ad" requiredMessage="Kullanici adi olmak zorunda" value="#{kullaniciKaydiManagedBean.k.kullaniciAdi}"></h:inputText>
+                                <h:message id="mesaj" for="k_ad"/>
+                            
+                                <h:outputText value="Adinizi giriniz :"/>
+                                <h:inputText id="ad" requiredMessage="Ad alanı boş olamaz" value="#{kullaniciKaydiManagedBean.k.adi}"/>
+                                <h:message id="mesaj1" for="ad"/>
+                                
+                                <h:outputText value="Soyadinizi giriniz :"/>
+                                <h:inputText id="soyad" requiredMessage="Soyadı alanı boş olamaz" value="#{kullaniciKaydiManagedBean.k.soyadi}"/>
+                                <h:message id="mesaj2" for="soyad"/>
+                                
+                                <h:outputText value="Sifre Giriniz :"/>
+                                <h:inputSecret id="sifre" requiredMessage="Sifre olmak zorunda :" value="#{kullaniciKaydiManagedBean.k.sifre}"></h:inputSecret>
+                                <h:message id="mesaj3" for="sifre"/>
+                                
+                                <h:outputText value="Email adresinizi giriniz :"/>
+                                <h:inputText id="mail" requiredMessage="Email alanı boş olamaz" value="#{kullaniciKaydiManagedBean.k.email}"/>
+                                <h:message id="mesaj4" for="mail"/>
+                                
+                                <h:outputText value="Telefon numaranızı giriniz :"/>
+                                <h:inputText id="tel" requiredMessage="Telefon alanı boş olamaz" value="#{kullaniciKaydiManagedBean.k.tel}"/>
+                                <h:message id="mesaj5" for="tel"/>
+                                
+                                <h:outputText value="Cinsiyetinizi Seçiniz"/>
+                                <h:selectOneMenu id="cinsiyet" value="#{kullaniciKaydiManagedBean.k.cinsiyet}">
+                                    <f:selectItem itemValue="Bayan" itemLabel="Bayan" />
+                                    <f:selectItem itemValue="Bay" itemLabel="Bay" />                                   
+                                </h:selectOneMenu>
+                                
+                                &nbsp;<h:commandButton class="btn btn-primary" action="#{kullaniciKaydiManagedBean.kaydet()}" value="Sisteme Kayıt"></h:commandButton>
+                            </h:panelGrid>
+                        </div>
+                    </div>
+                </h:form>
+            </ui:define>
+
+            <ui:define name="bottom">
+                bottom
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

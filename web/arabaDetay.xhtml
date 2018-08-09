@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./newTemplate.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+                    <div>
+                    <h:commandButton class="btn" style="background-color:#1d6996; margin-left: auto; margin-right: auto; alignment-adjust:middle;" action="#{arabaDetayBean.arabaGetir()}" value="Listele"></h:commandButton>
+                    <h:panelGrid columns="2" class="table table-bordered table-striped">
+                        <h:outputText value="Araba Id"/>
+                        <h:inputText value="#{arabaDetayBean.arb.aracId}"/>
+                        
+                        <h:outputText value="Marka"/>
+                        <h:inputText value="#{arabaDetayBean.arb.marka}"/>
+                        
+                        <h:outputText value="Model"/>
+                        <h:inputText value="#{arabaDetayBean.arb.model}"/>
+                    
+                        <h:outputText value="Renk"/>
+                        <h:inputText value="#{arabaDetayBean.arb.renk}"/>
+                        
+                        <h:outputText value="Km"/>
+                        <h:inputText value="#{arabaDetayBean.arb.km}"/>
+                        
+                        <h:outputText value="Fiyat"/>
+                        <h:inputText value="#{arabaDetayBean.arb.fiyat}"/>
+                        
+                        <h:outputText value="Yakıt Türü"/>
+                        <h:inputText value="#{arabaDetayBean.arb.yakitTuru}"/>
+                        
+                        <h:outputText value="Resim"/>
+                        <h:inputText value="#{arabaDetayBean.arb.resim}"/>
+                    </h:panelGrid>
+                    <h:panelGrid columns="3" class="table table-bordered">
+                        <h:commandButton class="btn btn-success" value="Araba Ekle" action="#{arabaDetayBean.arabaEkle()}"/>
+                        <h:commandButton class="btn" style="background-color:gold;" value="Araba Guncelle" action="#{arabaDetayBean.arabaGuncelle()}"/>
+                        <h:commandButton class="btn btn-danger" value="Araba Sil" action="#{arabaDetayBean.arabaSil()}"/>
+                    </h:panelGrid>
+                </div>
+                </h:form>
+            </ui:define>
+
+            <ui:define name="bottom">
+                Isparta 2016
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

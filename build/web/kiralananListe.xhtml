@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./newTemplate.xhtml">
+
+            <ui:define name="content">
+                <div class="panel panel-green">
+                    <div class="panel-heading" align="center">
+                            Kiralananlar Listesi
+                            <br/>
+                    </div>
+                        <div class="panel-body">
+                            <h:dataTable style="text-align:center; text-orientation:rotate-normal; margin-left:auto;" class="table table-bordered table-hover table-responsive" value="#{arabalarManagedBean.kiralananlar}" var="kira">
+                                <h:column>Araç Id :#{kira.aracId}<f:facet name="Araç Id"><h:outputLabel value="Arac Id"></h:outputLabel></f:facet></h:column>
+                                <h:column>Kullanıcı Id :#{kira.kullaniciId}<f:facet name="Kullanici Id"><h:outputLabel value="Kullanıcı Id"></h:outputLabel></f:facet></h:column>
+                                <h:column>Toplam Fiyat :#{kira.TFiyat} TL<f:facet name="Toplam Fiyat"><h:outputLabel value="Toplam Fiyat"></h:outputLabel></f:facet></h:column>
+                                <h:column>Gun Sayisi :#{kira.gunSayisi}<f:facet name="Gun Sayisi"><h:outputLabel value="Gün Sayısı"></h:outputLabel></f:facet></h:column>
+                            </h:dataTable>
+                    </div>
+                </div>
+            </ui:define>
+
+            <ui:define name="bottom">
+                Isparta 2016
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

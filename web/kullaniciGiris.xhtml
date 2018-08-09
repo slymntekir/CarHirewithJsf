@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./newTemplate.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Sisteme Giriş Yapınız
+                        </div>
+                        <div class="panel-body">
+                            <h:panelGrid class="table table-bordered table-condensed" columns="2">
+                                <h:outputText value="Kullanici Adi :"/>
+                                <h:inputText id="ad" requiredMessage="Kullanici adi olmak zorunda" value="#{kullanicilarManagedBean1.k.kullaniciAdi}"></h:inputText>
+
+                                <h:outputText value="Sifre :"/>
+                                <h:inputSecret id="sifre" value="#{kullanicilarManagedBean1.k.sifre}"></h:inputSecret>
+                            
+                                &nbsp;<h:commandButton class="btn btn-danger" value="GİRİŞ" action="#{kullanicilarManagedBean1.giris()}"></h:commandButton>
+                            </h:panelGrid>
+                        </div>
+                    </div>
+                </h:form>
+            </ui:define>
+
+            <ui:define name="bottom">
+                Isparta 2016
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
